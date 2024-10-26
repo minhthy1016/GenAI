@@ -25,7 +25,7 @@ pip install -r requirements.txt
 ```python
 pip install "unstructured[md]"
 ```
-- For Wiley_Storytelling-with-Data.md
+- For Wiley-Storytelling-with-Data.md
   
 ```python
 pip install "unstructured[pdf]"
@@ -44,7 +44,12 @@ python create_database.py
 Query the Chroma DB.
 
 ```python
-python query_data.py "How does Alice meet the Mad Hatter?"
+python query_data.py "What are techniques to create good data dashboard with storytelling and business impact?"
+```
+
+
+```python
+python query_data.py "Why does the Mad Hatter help Alice?"
 ```
 
 > You'll also need to set up an OpenAI account (and set the OpenAI key in your environment variable) for this to work.

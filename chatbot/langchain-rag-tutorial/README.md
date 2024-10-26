@@ -21,9 +21,14 @@ pip install -r requirements.txt
 ```
 
 3. Install markdown depenendies with: 
-
+ - For alice_in_wonderland.md
 ```python
 pip install "unstructured[md]"
+```
+- For Wiley_Storytelling-with-Data.md
+  
+```python
+pip install "unstructured[pdf]"
 ```
 
 ## Create database

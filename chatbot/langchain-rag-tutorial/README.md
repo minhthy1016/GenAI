@@ -53,4 +53,5 @@ python query_data.py "Why does the Mad Hatter help Alice?"
 ```
 
 > You'll also need to set up an OpenAI account (and set the OpenAI key in your environment variable) for this to work.
+> Link Youtube video presents the RAG pipeline : https://youtu.be/RawbOtoFUro
 

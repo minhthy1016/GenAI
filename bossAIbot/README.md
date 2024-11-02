@@ -18,13 +18,12 @@ Suggestion: You also need to prepare a Vector Database for finance first. Then b
 ## SETUP and run the notebook 
 - Step 1: Create local SQLite db at your local.
   After download Finance data and HR data in csv files. Enable SQLite and SQLiteViewer in your VSCode extendsions. Then Run
-  ```python
+  
+```python
 python db.py
 ```
 This will set up Finance_data.db and HR_data.db and its tables your SQLite.
-You will see like this:
 
-<img width="1105" alt="Screen Shot 2024-11-02 at 18 02 54" src="https://github.com/user-attachments/assets/9a2934f6-0a79-45c4-8f5b-c0a304f2b7b7">
 
 - Step 2: Now run this command to install dependenies in the `requirements.txt` file. 
 

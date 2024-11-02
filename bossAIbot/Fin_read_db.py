@@ -69,6 +69,6 @@ chain = (
     | StrOutputParser()
 )
 user_input_question = input("Enter your QA question\n: ")
-#response = chain.invoke({"question": "How many Sale Presentatives and Sale Managers employees are there?"})
+#response = chain.invoke({"question": "How much profit do Funitures and Office Supplies for Home and Consumer customers in years between 2011-2021?"})
 response = chain.invoke({"question": user_input_question})
 print(response)

@@ -27,6 +27,7 @@ load_dotenv()
 # Change environment variable name from "OPENAI_API_KEY" to the name given in 
 # your .env file.
 openai.api_key = os.environ['OPENAI_API_KEY']
+# os.environ['OPENAI_API_KEY'] = userdata.get('OPENAI_API_KEY')     # use this line in Colab
 
 
 # Define the SQLite database path
@@ -38,7 +39,7 @@ db = SQLDatabase.from_uri(
     db_path,
     sample_rows_in_table_info=1,  # Adjust sample rows per table if needed
     include_tables=['superstore_sale1'],  # Specify tables to include
-    custom_table_info={'superstore_sale1': "superstore_sale data 01"}
+    custom_table_info={'superstore_sale1': "superstore_sale1"}
 )
 
 # Print database dialect and table information

@@ -27,6 +27,7 @@ load_dotenv()
 # Change environment variable name from "OPENAI_API_KEY" to the name given in 
 # your .env file.
 openai.api_key = os.environ['OPENAI_API_KEY']
+# os.environ['OPENAI_API_KEY'] = userdata.get('OPENAI_API_KEY')     # use this line in Colab
 
 
 # Define the SQLite database path
@@ -38,7 +39,7 @@ db = SQLDatabase.from_uri(
     db_path,
     sample_rows_in_table_info=1,  # Adjust sample rows per table if needed
     include_tables=['employee_data_attrition'],  # Specify tables to include
-    custom_table_info={'employee_data_attrition': "Employee details and attrition factors"}
+    custom_table_info={'employee_data_attrition': "employee_data_attrition"}
 )
 
 # Print database dialect and table information
@@ -78,5 +79,6 @@ chain = (
 )
 user_input_question = input("Enter your QA question\n: ")
 #response = chain.invoke({"question": "How many Sale Presentatives and Sale Managers employees are there?"})
+#response = chain.invoke({"question": "How many employees have worked here greater than 5 years?"})
 response = chain.invoke({"question": user_input_question})
 print(response)

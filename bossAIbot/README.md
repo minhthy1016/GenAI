@@ -17,12 +17,13 @@ Suggestion: You also need to prepare a Vector Database for finance first. Then b
 
 ## SETUP and run the notebook 
 - Step 1: Create local SQLite db at your local.
-  After download Finance data and HR data in csv files. Enable SQLite and SQLiteViewer in your VSCode extendsions. Then Run
+  After download Finance data and HR data in csv files. Enable SQLite and SQLiteViewer in your VSCode extendsions. Or you can instal SQLite3. `!sudo apt-get install sqlite3`
+Then Run
   
 ```python
 python db.py
 ```
-This will set up Finance_data.db and HR_data.db and its tables your SQLite.
+This will set up Finance_data.db and HR_data.db and its tables in your SQLite.
 
 
 - Step 2: Now run this command to install dependenies in the `requirements.txt` file. 
@@ -30,6 +31,8 @@ This will set up Finance_data.db and HR_data.db and its tables your SQLite.
 ```python
 pip install -r requirements.txt
 ```
+Remember to check version of `sqlalchemy` to make sure you have installed it. 
+
 ## Query Finance database - as Finance user
 
 
@@ -43,6 +46,7 @@ python Fin_read_db.py
 ```python
 python HR_read_db.py 
 ```
-(input your QA. For example: "How many Sale Presentatives and Sale Managers employees are there?")
+(input your QA. For example: "How many employees have worked more than 5 years?")
 
-## 3) Use routing techniques to combine HRAssistant and FinAssistant into a single BossAssistant so that it can answer all questions about HR and Finance. (UNDER WORKING, WILL BE CONTINUED UPDATING)
+## 3) Use routing techniques to combine HRAssistant and FinAssistant into a single BossAssistant so that it can answer all questions about HR and Finance. 
+You can check my `Homework_notebook.ipynb` for Routing technique or follow this inspired reference : https://medium.com/@samarrana407/mastering-rag-advanced-methods-to-enhance-retrieval-augmented-generation-4b611f6ca99a#:~:text=Logical%20Routing%20in%20the%20context,nature%20of%20the%20user's%20question.

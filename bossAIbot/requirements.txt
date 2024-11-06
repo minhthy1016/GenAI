@@ -1,7 +1,8 @@
 python-dotenv==1.0.1 # For reading environment variables stored in .env file
-langchain==0.2.2
-langchain-community==0.2.3
+langchain==0.3.7 
+langchain-community==0.3.5
 langchain-openai==0.1.8 # For embeddings
+langchain-together==0.2.0 
 unstructured==0.14.4 # Document loading
 # onnxruntime==1.17.1 # chromadb dependency: on Mac use `conda install onnxruntime -c conda-forge` or `pip install onnxruntime`
 # For Windows users, install Microsoft Visual C++ Build Tools first
@@ -12,7 +13,10 @@ tiktoken==0.7.0  # For embeddings
 
 # install markdown depenendies with: `pip install "unstructured[md]"` after install the requirements file. Leave this line commented out. 
 langsmith==0.1.139
-faiss-cpu
+faiss-cpu==1.9.0
+sqlalchemy==2.0.35  # For connect to SQLite3 and execuse SQL query
+ipython-sql
 
 # command python3 -m pip install -r requirements.txt . Only execuse when you upgrade to python3.10 (by Homebrew). Then python3 -m pip install --upgrade pip
-
+# Install sqlite3
+#!sudo apt-get install sqlite3

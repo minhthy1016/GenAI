@@ -49,4 +49,4 @@ python HR_read_db.py
 (input your QA. For example: "How many employees have worked more than 5 years?")
 
 ## 3) Use routing techniques to combine HRAssistant and FinAssistant into a single BossAssistant so that it can answer all questions about HR and Finance. 
-You can check my `Homework_notebook.ipynb` for Routing technique or follow this inspired reference : https://medium.com/@samarrana407/mastering-rag-advanced-methods-to-enhance-retrieval-augmented-generation-4b611f6ca99a#:~:text=Logical%20Routing%20in%20the%20context,nature%20of%20the%20user's%20question.
+You can check my `[improve_RAGpipeline_with_Langchain.ipynb](https://github.com/minhthy1016/GenAI/blob/development/improve_RAGpipeline_with_Langchain.ipynb)` for Routing technique or follow this inspired reference : https://medium.com/@samarrana407/mastering-rag-advanced-methods-to-enhance-retrieval-augmented-generation-4b611f6ca99a#:~:text=Logical%20Routing%20in%20the%20context,nature%20of%20the%20user's%20question.

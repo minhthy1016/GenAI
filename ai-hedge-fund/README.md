@@ -1,127 +1,86 @@
-# Hedge Fund Agent Team
+# AI Stock Assistant with Reinforcement Learning
 
-![Hedge Fund Agent Team](/public/hf.png)
-**Note**: the system simulates trading decisions, it does not actually trade.
+## Project Information
+**Project Name:** AI Stock Assistant with RL  
+**Brief Description:** This project is an AI-powered stock analysis assistant that leverages reinforcement learning (RL) to provide investment insights. Users can input U.S. stock names, upload financial reports, and ask investment-related questions, with AI-generated responses based on financial data and market trends.
 
-This project is a simulation of a basic hedge fund research team powered by AI agents using LangChain and LangGraph. It includes a team of four specialized agents:
-
-- **Portfolio Manager**
-- **Fundamental Analyst**
-- **Technical Analyst**
-- **Sentiment Analyst**
-- **Valuation Analyst**
-- **Risk Manager**
-
-These agents collaborate to analyze stock data and provide insights into a stock's financial, technical, and market sentiment aspects. The system serves as a foundation for creating customized, automated investment analyses.
-
-## Project Overview
-
-The **Hedge Fund Agent Team** simulates an automated investment analysis team composed of four specialized agents:
-
-- **Portfolio Manager**: Oversees and summarizes the team’s findings into a cohesive investment analysis.
-- **Fundamental Analyst**: Analyzes financial statements, revenue, and profit metrics.
-- **Technical Analyst**: Monitors and reports real-time stock prices.
-- **Sentiment Analyst**: Gathers the latest news and public sentiment for market impact.
-- **Valuation Analyst**: Calculates the intrinsic value of a stock and generates trading signals.
-- **Risk Manager**: Calculates risk metrics and sets position limits.
-
-The team operates in parallel, leveraging LangGraph’s branching capabilities to provide a comprehensive view of a stock’s performance and potential investment appeal.
+## Introduction
+The AI Stock Assistant utilizes reinforcement learning to analyze stock performance and provide data-driven investment insights. By integrating financial reports and real-time market data, it offers investors a sophisticated tool for decision-making.
 
 ## Features
-
-- **Automated Financial Analysis**: Accesses over 30,000 tickers through @findatasets to retrieve and analyze financial data.
-- **Real-Time Data**: Retrieves live stock prices and daily changes.
-- **Sentiment Analysis**: Gathers recent news headlines and market sentiment.
-- **Parallel Execution**: Utilizes LangGraph's branching to allow agents to run tasks in parallel, improving efficiency.
+- **Stock Analysis with AI:** Uses RL to analyze stock trends and suggest insights.
+- **Financial Data Integration:** Accepts financial sheets and reports for enhanced predictions.
+- **Interactive Interface:** Built with Streamlit for a seamless user experience.
+- **Real-time Data Retrieval:** Utilizes `alpha_vantage` for market data.
 
 ## Installation
-
-Clone the repository:
+To install the required dependencies, run:
 ```bash
-git clone https://github.com/shaikhmubin02/ai-hedge-fund.git
-cd ai-hedge-fund
-```
-
-1. Install Poetry (if not already installed):
-```bash
-curl -sSL https://install.python-poetry.org | python3 -
-```
-
-2. Install dependencies:
-```bash
-poetry install
-```
-
-3. Set up your environment variables:
-```bash
-# Create .env file for your API keys
-cp .env.example .env
-```
-
-4. Set your API keys:
-```bash
-# https://platform.openai.com/
-OPENAI_API_KEY=your-openai-api-key
-
-# https://groq.com/
-GROQ_API_KEY=your-groq-api-key
-
-# https://financialdatasets.ai/
-FINANCIAL_DATASETS_API_KEY=your-financial-datasets-api-key
+pip install -r requirements.txt
 ```
 
 ## Usage
+1. Run the AI_stock_assistant_with_RL.ipynb
+2. Enter a stock name or upload financial reports.
+3. Ask investment-related questions, and receive AI-generated insights.
 
-### Running the Hedge Fund
-```bash
-poetry run python src/main.py --ticker AAPL,MSFT,NVDA
+## Results
+- AI-generated stock performance insights
+- Visualizations of financial trends
+- Real-time market data analysis
+
+## Technical Information
+### Technologies Used
+- **Programming Language:** Python
+- **Libraries & Frameworks:**
+  - `stable-baselines3`, `gym`, `langgraph`, `langchain`, `langchain_openai`
+  - `langchain_experimental`, `langsmith`, `pandas`, `streamlit`, `alpha_vantage`
+  - `llama-index`, `matplotlib`, `plotly`, `pydantic`, `openai`, `shimmy>=2.0`
+
+### System Requirements
+- Python 3.8+
+- Internet connection for real-time data fetching
+- Compatible with Windows, macOS, and Linux
+
+### Project Structure
+```
+/AI_Stock_Assistant/
+│── AI_stock_assistant_with_RL.ipynb           # Pretrained models notebook
+│── str_app.py           # Main application file
+│── str_app02.py         # Main application file
+│── rl_ex01.py           # RL model test file
+│── crew_ex1.py          # crewai app test file
+│── main01_crewai.py     # Main application file with RL model
+│── requirements.txt     # Dependencies
+│── data/                # Directory for financial reports
+│── README.md            # Project documentation
 ```
 
-**Example Output:**
-![](/public/output.png)
+## Support and Development
+### Support
+For inquiries, contact:
+- Email: minhthy1016@gmail.com
+- Community: 
+### Development
+- **Version 1.0:** Initial release with reinforcement learning integration.
+- **Future Plans:**
+    - Enhance reinforcement learning models for more accurate predictions.
+    - Enhance more stock data for training and backtesting.
+    - The AI stock-analyst assistant seems to be performing well in general stock analysis but gives bad decision in real trade (backtesting). It is result from lack of well formatted trainingset, well-organised and excusion between Analyst Agents and Trading Execusion Agents. Moving forwards, we can apply and finetune RL hyperparameter to get signals, suggestions from Analyst Agents to make trade decision and rewards in backtesting.
+    - Improve user interface and visualization features.
+    - xpand support for additional financial APIs.
 
-You can also specify a `--show-reasoning` flag to print the reasoning of each agent to the console.
+## License and Copyright
+### License
+This project is licensed under the MIT License.
 
-```bash
-poetry run python src/main.py --ticker AAPL,MSFT,NVDA --show-reasoning
-```
-You can optionally specify the start and end dates to make decisions for a specific time period.
+### Copyright
+© 2025 AI Stock Assistant. All rights reserved.
 
-```bash
-poetry run python src/main.py --ticker AAPL,MSFT,NVDA --start-date 2024-01-01 --end-date 2024-03-01 
-```
+## Conclusion
+### Acknowledgments
+Special thanks to the open-source community for contributions to AI and finance libraries.
 
-### Running the Backtester
+### Conclusion
+The AI Stock Assistant aims to bridge the gap between AI and investment decision-making, offering a robust tool for traders and analysts. Future enhancements will focus on accuracy, scalability, and user experience.
 
-```bash
-poetry run python src/backtester.py --ticker AAPL,MSFT,NVDA
-```
-
-**Example Output:**
-![](/public/output2.png)
-
-You can optionally specify the start and end dates to backtest over a specific time period.
-
-```bash
-poetry run python src/backtester.py --ticker AAPL,MSFT,NVDA --start-date 2024-01-01 --end-date 2024-03-01
-```
-
-## Project Structure 
-```
-ai-hedge-fund/
-├── src/
-│   ├── agents/                   # Agent definitions and workflow
-│   │   ├── fundamentals.py       # Fundamental analysis agent
-│   │   ├── portfolio_manager.py  # Portfolio management agent
-│   │   ├── risk_manager.py       # Risk management agent
-│   │   ├── sentiment.py          # Sentiment analysis agent
-│   │   ├── technicals.py         # Technical analysis agent
-│   │   ├── valuation.py          # Valuation analysis agent
-│   │   ├── warren_buffett.py     # Warren Buffett agent
-│   ├── tools/                    # Agent tools
-│   │   ├── api.py                # API tools
-│   ├── backtester.py             # Backtesting tools
-│   ├── main.py # Main entry point
-├── pyproject.toml
-├── ...
-```

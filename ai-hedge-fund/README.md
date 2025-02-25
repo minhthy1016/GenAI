@@ -60,7 +60,7 @@ pip install -r requirements.txt
 ### Support
 For inquiries, contact:
 - Email: minhthy1016@gmail.com
-- Community: 
+- Community: https://www.facebook.com/DataScienceWorld.Kan
 ### Development
 - **Version 1.0:** Initial release with reinforcement learning integration.
 - **Future Plans:**
